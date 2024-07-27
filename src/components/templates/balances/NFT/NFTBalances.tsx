@@ -3,11 +3,11 @@ import { useEvmWalletNFTs } from '@moralisweb3/next';
 import { NFTCard } from 'components/modules';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
-import { useNetwork } from 'wagmi';
+import { useAccount } from 'wagmi';
 
 const NFTBalances = () => {
   const { data } = useSession();
-  const { chain } = useNetwork();
+  const { chain } = useAccount();
   const { data: nfts } = useEvmWalletNFTs({
     address: data?.user?.address,
     chain: chain?.id,

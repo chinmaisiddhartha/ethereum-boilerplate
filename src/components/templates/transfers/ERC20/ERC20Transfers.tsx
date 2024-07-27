@@ -15,12 +15,12 @@ import { useEvmWalletTokenTransfers } from '@moralisweb3/next';
 import { useSession } from 'next-auth/react';
 import { useEffect } from 'react';
 import { getEllipsisTxt } from 'utils/format';
-import { useNetwork } from 'wagmi';
+import { useAccount } from 'wagmi';
 
 const ERC20Transfers = () => {
   const hoverTrColor = useColorModeValue('gray.100', 'gray.700');
   const { data } = useSession();
-  const { chain } = useNetwork();
+  const { chain } = useAccount();
   const { data: transfers } = useEvmWalletTokenTransfers({
     address: data?.user?.address,
     chain: chain?.id,

@@ -1,6 +1,6 @@
 import { Box, Container, Flex, HStack } from '@chakra-ui/react';
 import { ColorModeButton, MoralisLogo, NavBar } from 'components/elements';
-import { ConnectButton } from '../ConnectButton';
+import ConnectButton from 'components/modules/ConnectButton/ConnectButton';
 
 const Header = () => {
   return (
